@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+.page--main{
+    display: flex;
+    height: 100vh;
+}
+.page--left{
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+.signin--image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.signin--background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.page--right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signin-page{
+    height: 60%;
+    width: 52%;
+    margin-right: 20%;
+}
+.signin--heading{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 48px;
+    color: #2E2C34;
+    margin-bottom: 12px;
+}
+.signin--newUser{
+    font-size: 14px;
+    font-weight: 500;
+    color: #2E2C34;
+    margin-bottom: 35px;
+}
+.signin--newUser>span{
+    color: #29B475;
+    cursor: pointer;
+    font-weight: 600;
+}
+.signin--inputBoxHeading{
+    font-size: 12px;
+    font-weight: 500;
+    color:#84818A;
+}
+hr{
+    background: #EBEAED;
+    border: none;
+    height: 1px;
+    margin-bottom: 24px;
+}
+.hrStyle{
+    background: #29B475;
+}
+.signin--inputBox{
+    border: none;
+    width: 380px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2E2C34; 
+}
+.signin--inputBox::placeholder{
+    font-size: 14px;
+    font-weight: 500;
+    color: #84818A;
+}
+input:focus{
+    outline: none;
+}
+.signin--passwordDiv{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.signin--showpass{
+    opacity: .5;
+    width: 16px;
+    height: 13px;
+}
+.signin--buttonDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+.signin--forget{
+    text-decoration: none;
+    color: #29B475;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signin--button{
+    padding: 11px 35px;
+    gap: 12px;
+    display: flex;
+    border-radius: 100px;
+    border: none;
+    background-color: #29B475;
+    cursor: pointer;
+    color: #FBFAFC;
+}
+.signin--orDiv{
+    width: 100%;
+    height: 12px;
+    border-bottom: 1px solid #EBEAED; text-align: center;
+    margin-top: 10px;
+}
+.signin--or{
+    font-size: 14px;
+    background-color: #FFFF;
+    padding: 0 10px;
+    font-weight: 500;
+    color: #2E2C34;
+}
+.signin--privacy{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 27px;
+    color: #84818A;
+}
+.signin--privacy>span{
+    color: #29B475;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+   *{
+    margin: 0%;
+    padding: 0%;
+   }
+    .page--main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+   }
+
+    .page--left{
+    display: none;
+
+   }
+   .page--right{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+   }
+   .signin-page{
+    width: 90%;
+    margin: 0%;
+   }
+   .signin--buttonDiv{
+    display: flex;
+    flex-direction: column-reverse;
+   }
+   .signin--button{
+    padding: 11px 20%;
+    margin-bottom: 3%;
+   }
+
+   
+  }
