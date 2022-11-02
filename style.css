@@ -139,6 +139,7 @@ input:focus{
 
 
 
+
 @media only screen and (max-width: 900px) {
    *{
     margin: 0%;
@@ -162,8 +163,10 @@ input:focus{
     padding: 0%;
    }
    .signin-page{
-    width: 90%;
+    width: 80%;
     margin: 0%;
+    padding: 40px;
+
    }
    .signin--buttonDiv{
     display: flex;

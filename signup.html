@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="page--main">
+
+
+        <div class="page--left">
+            <img src="./images/depositphotos_6859250-stock-photo-laboratory 1.png" class="signin--image" />
+            <img src="./images/signin-image.png" alt="" class="signin--background">
+        </div>
+
+
+        <div class="page--right">
+            <div class="signin-page">
+                <h1 class="signin--heading">Sign Up</h1>
+                <p class="signin--newUser">Already have an account? <span onclick="signin()">Sign In</span></p>
+                <p class="signin--inputBoxHeading " id="signup--emailHeading"></p>
+                <form action="">
+                    <input type="email" placeholder="Enter new email" class="signin--inputBox" onblur="signupFunction1(this)"
+                        onfocus="signupFunction(this)" />
+                    <hr id="signup--email">
+                    <p class="signin--inputBoxHeading" id="signup--passHeading"></p>
+                    <div class="signin--passwordDiv">
+                        <input type="password" placeholder="Enter new password" class="signin--inputBox"
+                            id="signin--passwordInput" onblur="signupFunction1(this)" onfocus="signupFunction(this)" />
+                        <img src="./images/eye.png" id="password--eye" class="signin--showpass" onclick="removeEye()">
+                    </div>
+                    <hr id="signup--password">
+                    <div class="signin--buttonDiv">
+                        <p class="signin--forget" onclick="support()">Can't sign up Help?</p>
+                        <button class="signin--button" onclick="signIn()">Sign Up</button>
+                    </div>
+                </form>
+
+                <div class="signin--orDiv">
+                    <span class="signin--or" style="font-size: 14px; background-color: #FFFF; padding: 0 10px;">
+                        or
+                    </span>
+                </div>
+
+                <p class="signin--privacy">Protected by reCAPTCHA and subject to the Google <span>Privacy Policy</span>
+                    and <span>Terms of Service</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>
+
+<script>
+    function signupFunction(x){
+    if (x.type == "email") {
+        let email = document.getElementById("signup--email").className = "hrStyle"
+        document.getElementById("signup--emailHeading").innerText = "Enter new email"
+    }
+    else {
+        let password = document.getElementById("signup--password").className = "hrStyle"
+        document.getElementById("signup--passHeading").innerText = "Enter new password"
+    }
+    x.placeholder = "";
+    return
+    }
+
+    function signupFunction1(x) {
+    if (x.type == "email") {
+        x.placeholder = "Enter new email"
+
+    }
+    else {
+        x.placeholder = "Enter new password"
+    }
+    document.getElementById("signup--password").classList.remove("hrStyle")
+    document.getElementById("signup--email").classList.remove("hrStyle")
+    document.getElementById("signup--passHeading").innerText = ""
+    document.getElementById("signup--emailHeading").innerText = ""
+
+    return
+}
+</script>
