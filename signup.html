@@ -31,7 +31,7 @@
                 <p class="signin--inputBoxHeading " id="signup--emailHeading"></p>
                 <form action="">
                     <input type="email" placeholder="Enter new email" class="signin--inputBox" onblur="signupFunction1(this)"
-                        onfocus="signupFunction(this)" />
+                        onfocus="signupFunction(this)" id="signup--input" />
                     <hr id="signup--email">
                     <p class="signin--inputBoxHeading" id="signup--passHeading"></p>
                     <div class="signin--passwordDiv">
@@ -42,7 +42,7 @@
                     <hr id="signup--password">
                     <div class="signin--buttonDiv">
                         <p class="signin--forget" onclick="support()">Can't sign up Help?</p>
-                        <button class="signin--button" onclick="signIn()">Sign Up</button>
+                        <button class="signin--button" onclick="signupAccount(event)">Sign Up</button>
                     </div>
                 </form>
 
@@ -65,32 +65,7 @@
 </html>
 
 <script>
-    function signupFunction(x){
-    if (x.type == "email") {
-        let email = document.getElementById("signup--email").className = "hrStyle"
-        document.getElementById("signup--emailHeading").innerText = "Enter new email"
-    }
-    else {
-        let password = document.getElementById("signup--password").className = "hrStyle"
-        document.getElementById("signup--passHeading").innerText = "Enter new password"
-    }
-    x.placeholder = "";
-    return
-    }
 
-    function signupFunction1(x) {
-    if (x.type == "email") {
-        x.placeholder = "Enter new email"
 
-    }
-    else {
-        x.placeholder = "Enter new password"
-    }
-    document.getElementById("signup--password").classList.remove("hrStyle")
-    document.getElementById("signup--email").classList.remove("hrStyle")
-    document.getElementById("signup--passHeading").innerText = ""
-    document.getElementById("signup--emailHeading").innerText = ""
-
-    return
-}
+    
 </script>

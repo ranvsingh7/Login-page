@@ -31,7 +31,7 @@
                 <p class="signin--inputBoxHeading " id="signin--emailHeading"></p>
                 <form action="">
                     <input type="email" placeholder="Email address" class="signin--inputBox" onblur="myFunction1(this)"
-                        onfocus="myFunction(this)" />
+                        onfocus="myFunction(this)"  id="signin--input"/>
                     <hr id="signin--email">
                     <p class="signin--inputBoxHeading" id="signin--passHeading"></p>
                     <div class="signin--passwordDiv">
@@ -42,7 +42,7 @@
                     <hr id="signin--password">
                     <div class="signin--buttonDiv">
                         <p class="signin--forget" onclick="support()">Forget password?</p>
-                        <button class="signin--button" onclick="signIn()">Sign In</button>
+                        <button class="signin--button" onclick="signIn(event)">Sign In</button>
                     </div>
                 </form>
 
