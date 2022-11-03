@@ -1,3 +1,56 @@
+let signUpData= JSON.parse(localStorage.getItem("signupData"))||[]
+function signupAccount(event){
+    event.preventDefault()
+    let email=document.getElementById("signup--input").value 
+    let password=document.getElementById("signin--passwordInput").value
+    if(dataLength==0){
+        noAccountFound()
+    }
+    else{
+        signUpData.forEach((el,index)=>{
+            if(email==el.email){
+                alert("You have already sign up, Please login.")
+                window.location="./index.html"
+            }
+            else if(dataLength==index+1){
+                noAccountFound()
+            }
+        })
+    }
+    function noAccountFound(){
+        if(email.includes("@"&&".")){
+            if(password.length>=8){
+                let data=  {
+                    "email":email,
+                    "password":password
+                }
+                signUpData.push(data)
+                localStorage.setItem("signupData", JSON.stringify(signUpData))
+                alert("SignUp successfully, SignIn with your account.")
+                document.getElementById("signup--input").value=""
+                document.getElementById("signin--passwordInput").value=""
+                window.location="./index.html"
+            }
+            else{
+                alert("Please enter 8 digit password")
+            }
+        }
+        else{
+            alert("Please enter valid email.")
+        }    
+    }
+        
+}
+
+
+
+
+
+
+
+
+
+
 function myFunction(x) {
     if (x.type == "email") {
         let email = document.getElementById("signin--email").className = "hrStyle"
@@ -46,6 +99,8 @@ function signin(){
 function signup() {
     window.location="./signup.html"
 }
+
+let dataLength=signUpData.length
 function signIn(event) {
     event.preventDefault()
     let email=document.getElementById("signin--input").value
@@ -59,7 +114,7 @@ function signIn(event) {
     }
     let account=false
     signUpData.forEach((el,index)=>{
-        let dataLength=signUpData.length
+        
         
         if(email==el.email){
 
@@ -68,7 +123,7 @@ function signIn(event) {
             
         }
         else if(index+1==dataLength && account==false){
-            alert("Email is incorrect")
+            alert("Email is Incorrect.")
             console.log(index)
             console.log(dataLength)
         }
@@ -80,11 +135,13 @@ function signIn(event) {
 function accountGet(el){
     let password=document.getElementById("signin--passwordInput").value
     if(password==el.password){
-        alert("signIn successfully")
+        alert("SignIn Successfully.")
+        document.getElementById("signin--passwordInput").value=""
+        document.getElementById("signin--input").value=""
         
     }
     else{
-        alert("Password is incorrect")
+        alert("Password is Incorrect.")
     }
 }
 
@@ -126,32 +183,3 @@ function signupFunction(x){
 
 // let signUpData=[]
 // let signinData=JSON.parse(signUpData)||[]
-let signUpData= JSON.parse(localStorage.getItem("signupData"))||[]
-function signupAccount(event){
-    event.preventDefault()
-    let email=document.getElementById("signup--input").value 
-    let password=document.getElementById("signin--passwordInput").value
-    signUpData.forEach((el)=>{
-        if(email==el.email){
-            alert("You have already sign up, Please login.")
-            window.location="./index.html"
-        }
-    })
-    if(email.includes("@"&&".")){
-        if(password.length>=8){
-            let data=  {
-                "email":email,
-                "password":password
-            }
-            signUpData.push(data)
-            localStorage.setItem("signupData", JSON.stringify(signUpData))
-            alert("SignUp successfully, SignIn with your account.")
-            document.getElementById("signup--input").value=""
-            document.getElementById("signin--passwordInput").value=""
-            window.location="./index.html"
-        }
-    }
-    else{
-        alert("Please enter valid email")
-    }        
-}
